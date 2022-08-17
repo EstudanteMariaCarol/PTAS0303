@@ -1,10 +1,13 @@
 const express = require('express');
-const { usuario } = require('./models');
+//const { usuario } = require('./models');
 
 const app = express();
 
+app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
+
+app.use(express.static('public'))
 
 app.get('/', async function(req, res){
 //  var resultado = await usuario.findAll();
@@ -13,6 +16,10 @@ app.get('/', async function(req, res){
 
 app.get('/autenticar', async function(req, res){
   res.render("autenticar")
+  });
+
+app.get('/inscricao', async function(req, res){
+  res.render("inscricao")
   });
 
 app.listen(3000, function() {
