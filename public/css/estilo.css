@@ -1,0 +1,13 @@
+.card{
+background-color: #26425d ;
+width: 60%;
+height: 40%;
+display: flex; 
+justify-content: center; 
+align-items : center; 
+position: absolute;  
+letter-spacing: 4px;
+top: 25%;
+left:20%;
+color: #b37bac;
+}
