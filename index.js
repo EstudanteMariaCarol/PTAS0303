@@ -1,4 +1,5 @@
 const express = require('express');
+const { UPSERT } = require('sequelize/types/query-types');
 //const { usuario } = require('./models');
 
 const app = express();
@@ -20,6 +21,19 @@ app.get('/autenticar', async function(req, res){
 
 app.get('/inscricao', async function(req, res){
   res.render("inscricao")
+  });
+
+app.post('/logar',function(req, res){
+  const usuario = req.body.usuario;
+  const senha = req.body.senha;
+
+
+  if(usuario == "carol" && senha == "1234"){
+    req.send("Autenticado")
+  }else{
+    req.send("Não Autenticado")
+  }
+
   });
 
 app.listen(3000, function() {
